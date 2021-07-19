@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <changeSet id="00000000000001" author="zoz">
+
+        <createTable tableName="book">
+           <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="title" type="varchar(100)"/>
+            <column name="isbn" type="varchar(50)"/>
+            <column name="status_id" type="int"/>
+            <column name="published_at" type="datetime"/>
+
+        </createTable>
+
+        <createTable tableName="author_book">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="author_id" type="bigint"/>
+            <column name="book_id" type="bigint"/>
+            <column name="created_at" type="datetime"/>
+            <column name="created_by" type="bigint"/>
+
+        </createTable>
+
+        <addPrimaryKey columnNames="author_id, book_id" tableName="author_book"/>
+
+        <addForeignKeyConstraint baseColumnNames="author_id"
+                                 baseTableName="author_book"
+                                 constraintName="fk_author_book_author_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="app_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="book_id"
+                                 baseTableName="author_book"
+                                 constraintName="fk_author_book_book_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="book"/>
+
+        <createTable tableName="genre">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(100)"/>
+
+        </createTable>
+
+        <createTable tableName="book_genre">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="book_id" type="bigint"/>
+            <column name="genre_id" type="int"/>
+            <column name="created_at" type="datetime"/>
+            <column name="created_by" type="bigint"/>
+
+        </createTable>
+
+        <createTable tableName="book_status">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(100)"/>
+            <column name="code" type="varchar(3)">
+            <constraints unique="true" nullable="false"/>
+            </column>
+
+        </createTable>
+
+        <addForeignKeyConstraint baseColumnNames="book_id"
+                                 baseTableName="book_genre"
+                                 constraintName="fk_book_genre_book_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="book"/>
+
+        <addForeignKeyConstraint baseColumnNames="genre_id"
+                                 baseTableName="book_genre"
+                                 constraintName="fk_book_genre_genre_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="genre"/>
+
+        <addForeignKeyConstraint baseColumnNames="status_id"
+                                 baseTableName="book"
+                                 constraintName="fk_book_status_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="book_status"/>
+    </changeSet>
+
+</databaseChangeLog>

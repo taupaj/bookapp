@@ -1,0 +1,5 @@
+id;username;password;first_name;last_name;is_author
+1;admin;$2a$10$8qehEwt6.QVcQh5w4xgsB.y3jcR5yt4mew/gnqsJw4CJB89YkLPHm;Admin; Adminic; false
+2;user;$2a$10$VEjxo0jq2YG9Rbk2HmX9S.k1uZBGYUHdUcid3g/vfiEl7lwWgOH/K;User; Useric; false
+3;anonymous;$2a$10$j8S5d7Sr7.8VTOYNviDPOeWX8KcYILUVJBsYV83Y5NtECayypx9lO; Gledalac; Gledalic; false
+4;william.shakespeare;$2a$10$j8S5d7Sr7.8VTOYNviDPOeWX8KcYILUVJBsYV83Y5NtECayypx9lO; William; Shakespeare; true

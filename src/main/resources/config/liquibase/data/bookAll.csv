@@ -1,0 +1,100 @@
+id;title;isbn;genre
+1;Da Vinci Code;978-0-520-24774-1;Adventure
+2;Harry Potter and the Philosopher's Stone;978-0-520-24774-2;Fantasy
+3;Harry Potter and the Chamber of Secrets;978-0-520-24774-3;Mystery thriller
+4;Angels and Demons;978-0-520-24774-4;Fantasy
+5;Harry Potter and the Order of the Phoenix;978-0-520-24774-5;Fantasy
+6;Harry Potter and the Half-blood Prince:Children's Edition;978-0-520-24774-6;Fantasy
+7;Harry Potter and the Deathly Hallows;978-0-520-24774-7;Fantasy
+8;Harry Potter and the Prisoner of Azkaban;978-0-520-24774-8;Fantasy
+9;Twilight;978-0-520-24774-9;Fantasy
+10;Harry Potter and the Goblet of Fire;978-0-520-24774-10;Fantasy
+11;Deception Point;978-0-520-24774-11;Coming-of-age
+12;New Moon;978-0-520-24774-12;Romance
+13;Lovely Bones,The;978-0-520-24774-13;Historical
+14;Digital Fortress;978-0-520-24774-14;Self-improvement
+15;Curious Incident of the Dog in the Night-time,The;978-0-520-24774-15;Magic realism
+16;Eclipse;978-0-520-24774-16;General
+17;Girl with the Dragon Tattoo,The:Millennium Trilogy;978-0-520-24774-17;Children's fiction
+18;Kite Runner,The;978-0-520-24774-18;Manual
+19;Time Traveler's Wife,The;978-0-520-24774-19;General
+20;World According to Clarkson,The;978-0-520-24774-20;Children's literature
+21;Atonement;978-0-520-24774-21;Historical novel, mystery
+22;Lost Symbol,The;978-0-520-24774-22;War, thriller
+23;Short History of Nearly Everything,A;978-0-520-24774-23;Fantasy
+24;Breaking Dawn;978-0-520-24774-24;Sexology
+25;Harry Potter and the Goblet of Fire;978-0-520-24774-25;Children's fiction
+26;Harry Potter and the Deathly Hallows;978-0-520-24774-26;Adventure
+27;Girl Who Played With Fire,The:Millennium Trilogy;978-0-520-24774-27;Fantasy
+28;Child Called It,A;978-0-520-24774-28;Mystery thriller
+29;No.1 Ladies' Detective Agency,The:No.1 Ladies' Detective Agency S.;978-0-520-24774-29;Fantasy
+30;You are What You Eat:The Plan That Will Change Your Life;978-0-520-24774-30;Fantasy
+31;Man and Boy;978-0-520-24774-31;Fantasy
+32;Birdsong;978-0-520-24774-32;Fantasy
+33;Labyrinth;978-0-520-24774-33;Fantasy
+34;Island,The;978-0-520-24774-34;Fantasy
+35;Life of Pi;978-0-520-24774-35;Fantasy
+36;Dr. Atkins' New Diet Revolution:The No-hunger, Luxurious Weight Loss P;978-0-520-24774-36;Coming-of-age
+37;Tales of Beedle the Bard,The;978-0-520-24774-37;Romance
+38;Captain Corelli's Mandolin;978-0-520-24774-38;Historical
+39;Delia's How to Cook:(Bk.1);978-0-520-24774-39;Self-improvement
+40;Gruffalo,The;978-0-520-24774-40;Magic realism
+41;Eats, Shoots and Leaves:The Zero Tolerance Approach to Punctuation;978-0-520-24774-41;General
+42;Northern Lights:His Dark Materials S.;978-0-520-24774-42;Children's fiction
+43;Interpretation of Murder,The;978-0-520-24774-43;Manual
+44;Girl Who Kicked the Hornets' Nest,The:Millennium Trilogy;978-0-520-24774-44;General
+45;Bridget Jones: The Edge of Reason;978-0-520-24774-45;Children's literature
+46;Short History of Tractors in Ukrainian,A;978-0-520-24774-46;Historical novel, mystery
+47;Alchemist,The:A Fable About Following Your Dream;978-0-520-24774-47;War, thriller
+48;Notes from a Small Island;978-0-520-24774-48;Fantasy
+49;Boy in the Striped Pyjamas,The;978-0-520-24774-49;Sexology
+50;Stupid White Men:...and Other Sorry Excuses for the State of the Natio;978-0-520-24774-50;Children's fiction
+51;Jamie's 30-minute Meals;978-0-520-24774-51;Adventure
+52;Broker,The;978-0-520-24774-52;Fantasy
+53;Bridget Jones's Diary:A Novel;978-0-520-24774-53;Mystery thriller
+54;Very Hungry Caterpillar,The:The Very Hungry Caterpillar;978-0-520-24774-54;Fantasy
+55;Thousand Splendid Suns,A;978-0-520-24774-55;Fantasy
+56;Sound of Laughter,The;978-0-520-24774-56;Fantasy
+57;Jamie's Italy;978-0-520-24774-57;Fantasy
+58;Small Island;978-0-520-24774-58;Fantasy
+59;Memory Keeper's Daughter,The;978-0-520-24774-59;Fantasy
+60;Billy Connolly;978-0-520-24774-60;Fantasy
+61;House at Riverton,The;978-0-520-24774-61;Coming-of-age
+62;Harry Potter and the Order of the Phoenix;978-0-520-24774-62;Romance
+63;Nigella Express;978-0-520-24774-63;Historical
+64;Memoirs of a Geisha;978-0-520-24774-64;Self-improvement
+65;Delia's How to Cook:(Bk.2);978-0-520-24774-65;Magic realism
+66;Subtle Knife,The:His Dark Materials S.;978-0-520-24774-66;General
+67;Jamie's Ministry of Food:Anyone Can Learn to Cook in 24 Hours;978-0-520-24774-67;Children's fiction
+68;Guinness World Records 2009:2009;978-0-520-24774-68;Manual
+69;Why Don't Penguins' Feet Freeze?:And 114 Other Questions;978-0-520-24774-69;General
+70;Jamie at Home:Cook Your Way to the Good Life;978-0-520-24774-70;Children's literature
+71;White Teeth;978-0-520-24774-71;Historical novel, mystery
+72;Devil Wears Prada,The;978-0-520-24774-72;War, thriller
+73;At My Mother's Knee ...:and Other Low Joints;978-0-520-24774-73;Fantasy
+74;No Time for Goodbye;978-0-520-24774-74;Sexology
+75;"Times" Su Doku,The:The Utterly Addictive Number-placing Puzzle:(Bk. 1;978-0-520-24774-75;Children's fiction
+76;Chocolat;978-0-520-24774-76;Adventure
+77;Return of the Naked Chef,The;978-0-520-24774-77;Fantasy
+78;Angela's Ashes:A Memoir of a Childhood;978-0-520-24774-78;Mystery thriller
+79;Schott's Original Miscellany;978-0-520-24774-79;Fantasy
+80;Dreams from My Father:A Story of Race and Inheritance;978-0-520-24774-80;Fantasy
+81;Dangerous Book for Boys,The;978-0-520-24774-81;Fantasy
+82;To Kill a Mockingbird;978-0-520-24774-82;Fantasy
+83;Harry Potter and the Half-blood Prince;978-0-520-24774-83;Fantasy
+84;Summons,The;978-0-520-24774-84;Fantasy
+85;Lost Symbol,The;978-0-520-24774-85;Fantasy
+86;Catcher in the Rye,The;978-0-520-24774-86;Coming-of-age
+87;I Can Make You Thin;978-0-520-24774-87;Romance
+88;Happy Days with the Naked Chef;978-0-520-24774-88;Historical
+89;Brick Lane;978-0-520-24774-89;Self-improvement
+90;Anybody Out There?;978-0-520-24774-90;Magic realism
+91;Undomestic Goddess,The;978-0-520-24774-91;General
+92;Book Thief,The;978-0-520-24774-92;Children's fiction
+93;I Know You Got Soul;978-0-520-24774-93;Manual
+94;Sharon Osbourne Extreme:My Autobiography;978-0-520-24774-94;General
+95;Guinness World Records 2010;978-0-520-24774-95;Children's literature
+96;Amber Spyglass,The:His Dark Materials S.;978-0-520-24774-96;Historical novel, mystery
+97;Can You Keep a Secret?;978-0-520-24774-97;War, thriller
+98;Down Under;978-0-520-24774-98;Fantasy
+99;Spot of Bother,A;978-0-520-24774-99;Sexology

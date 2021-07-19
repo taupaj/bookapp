@@ -1,0 +1,10 @@
+id;name;description;url;method;section
+1;createAuthor;NULL;/api/author;POST;user-resource
+2;updateAuthor;NULL;/api/author;PUT;user-resource
+3;getAllAuthors;NULL;/api/author/page;GET;user-resource
+4;createBook;NULL;/api/book;POST;book-resource
+5;updateBook;NULL;/api/book;PUT;book-resource
+6;getAllBooks;NULL;/api/book/page;GET;book-resource
+7;publishBook;NULL;/api/book/status/publish/{id};PUT;book-resource
+8;getAllAuthorsWithBooks;NULL;/api/authors-and-books/authors/page;GET;authors-and-books-resource
+9;getAllBooks;NULL;/api/authors-and-books/books/page;GET;authors-and-books-resource

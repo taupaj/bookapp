@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        ADD new actions and group of actions
+    -->
+    <changeSet id="02" author="zoz">
+
+        <loadUpdateData
+                file="../data/app_user.csv"
+                separator=";"
+                tableName="app_user"
+                relativeToChangelogFile="true"
+                primaryKey="id">
+        </loadUpdateData>
+
+        <loadUpdateData
+            file="../data/action.csv"
+            separator=";"
+            tableName="administration_action"
+            relativeToChangelogFile="true"
+            primaryKey="id"/>
+
+        <loadUpdateData
+                file="../data/group.csv"
+                separator=";"
+                tableName="administration_group"
+                relativeToChangelogFile="true" primaryKey="id">
+        </loadUpdateData>
+
+        <loadUpdateData
+            file="../data/group_action.csv"
+            separator=";"
+            tableName="administration_group_action"
+            relativeToChangelogFile="true"
+            primaryKey="id"/>
+
+        <loadUpdateData
+                file="../data/role.csv"
+                separator=";"
+                tableName="administration_role"
+                relativeToChangelogFile="true" primaryKey="id">
+        </loadUpdateData>
+
+        <loadUpdateData
+                file="../data/role_group.csv"
+                separator=";"
+                tableName="administration_role_group"
+                relativeToChangelogFile="true" primaryKey="id">
+        </loadUpdateData>
+
+    </changeSet>
+
+</databaseChangeLog>

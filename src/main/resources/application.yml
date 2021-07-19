@@ -1,0 +1,25 @@
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bookapp
+    username: postgres
+    password: root
+  liquibase:
+    enabled: true
+    change-log: classpath:config/master.xml
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+cron:
+  #every day every hour ...
+  createReportNewIsbnBooks: 59 * * * * *
+
+
