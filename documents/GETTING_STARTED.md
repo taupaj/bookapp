@@ -29,11 +29,3 @@ spring:
     username: postgres
     password: ####
 ```
-
-*	A Java Keystore File is required to generate JSON Web Token.
-
-```shell
-keytool -genkey -alias redditclone -keyalg RSA -keystore redditclone.jks -keysize 2048
-```
-
-<img src="images\settings\reddit-clone-jks-generation.PNG"/>
