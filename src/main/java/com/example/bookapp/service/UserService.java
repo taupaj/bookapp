@@ -16,8 +16,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class UserService {
 
-    private static final String ENTITY_NAME = "User";
-
     private final Logger log = LoggerFactory.getLogger(UserService.class);
 
     private final UserRepository userRepository;
@@ -52,7 +50,7 @@ public class UserService {
     }
 
     private void prepareCriteria(UserFilter userFilter) {
-        userFilter.setAuthor(Boolean.TRUE);
+        userFilter.setIsAuthor(Boolean.TRUE);
     }
 
 }

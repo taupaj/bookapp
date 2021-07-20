@@ -31,11 +31,11 @@ public class AuthorBook implements Serializable {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(updatable = false, nullable = false)
+    @JoinColumn(name = "user_id", nullable = false)
     private User author;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(updatable = false, nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "book_id", nullable = false)
     private Book book;
 
     @Column(name = "created_at")
@@ -44,54 +44,4 @@ public class AuthorBook implements Serializable {
     @Column(name = "created_by")
     private Long createdBy;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public User getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(User author) {
-        this.author = author;
-    }
-
-    public Book getBook() {
-        return book;
-    }
-
-    public void setBook(Book book) {
-        this.book = book;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Long getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(Long createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    @Override
-    public String toString() {
-        return "AuthorBook{" +
-                "id=" + id +
-                ", author=" + author +
-                ", book=" + book +
-                ", createdAt=" + createdAt +
-                ", createdBy=" + createdBy +
-                '}';
-    }
 }

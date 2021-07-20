@@ -35,11 +35,11 @@ public class BookService {
     private final Logger log = LoggerFactory.getLogger(BookService.class);
 
     private final BookRepository bookRepository;
-    private final BookStatusRepository bookStatusRepository;
+    private final BookStatusService bookStatusService;
 
-    public BookService(BookRepository bookRepository, BookStatusRepository bookStatusRepository ) {
+    public BookService(BookRepository bookRepository, BookStatusService bookStatusService ) {
         this.bookRepository = bookRepository;
-        this.bookStatusRepository = bookStatusRepository;
+        this.bookStatusService = bookStatusService;
     }
     /**
      * Return a {@link Page} of {@link User} which matches the criteria from the database
@@ -88,7 +88,7 @@ public class BookService {
         /*
         Prevalidation code if needed
         * */
-        book.setBookStatus(bookStatusRepository.findByCode(BookStatuses.PUBLISHED_CODE));
+        book.setBookStatus(bookStatusService.findOneByCode(BookStatuses.PUBLISHED_CODE));
         book.setPublishedAt(LocalDateTime.now());
         /*
         Post action after change status tu publish
@@ -105,7 +105,7 @@ public class BookService {
         log.info("Cron job started: Creating reports for new books and isbn data {}", LocalDateTime.now());
 
         List<Book> bookList = bookRepository.findAllByBookStatusAndPublishedAtAfter(
-                bookStatusRepository.findByCode(BookStatuses.PUBLISHED_CODE),LocalDate.now());
+                bookStatusService.findOneByCode(BookStatuses.PUBLISHED_CODE),LocalDateTime.now());
 
         List<AutomaticEmailProperties> emailProperties = new ArrayList<>();
 

@@ -5,10 +5,10 @@ import com.example.bookapp.domain.BookStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public interface BookRepository extends JpaRepository<Book, Long>, JpaSpecificationExecutor<Book> {
 
-    List<Book> findAllByBookStatusAndPublishedAtAfter(BookStatus bookStatus, LocalDate lastDateCronJob);
+    List<Book> findAllByBookStatusAndPublishedAtAfter(BookStatus bookStatus, LocalDateTime lastDateCronJob);
 }

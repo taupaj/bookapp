@@ -1,7 +1,7 @@
 package com.example.bookapp.spacification;
 
-import com.example.bookapp.domain.AuthorBook;
 import com.example.bookapp.domain.User;
+import com.example.bookapp.domain.User_;
 import com.example.bookapp.filter.UserFilter;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.BooleanUtils;
@@ -31,7 +31,7 @@ public class UserSpecification implements Specification<User> {
         String likeFormat = "%%%s%%";
         List<Predicate> predicates = new ArrayList<>();
 
-        /*if (CollectionUtils.isNotEmpty(filter.getIds())) {
+        if (CollectionUtils.isNotEmpty(filter.getIds())) {
             predicates.add(root.get(User_.id).in(filter.getIds()));
         }
 
@@ -45,7 +45,7 @@ public class UserSpecification implements Specification<User> {
         }
 
         if (filter.getFirstName() != null) {
-            predicates.add(criteriaBuilder.like(root.get(User_.firstname),
+            predicates.add(criteriaBuilder.like(root.get(User_.firstName),
                     String.format(likeFormat, filter.getFirstName())));
         }
 
@@ -61,7 +61,7 @@ public class UserSpecification implements Specification<User> {
         if (BooleanUtils.isFalse(filter.getIsAuthor())) {
             predicates.add(criteriaBuilder.or(criteriaBuilder.isFalse(root.get(User_.isAuthor)),
                                               criteriaBuilder.isNull(root.get(User_.isAuthor))));
-        }*/
+        }
 
         Predicate[] predicateArray = predicates.toArray(new Predicate[0]);
 

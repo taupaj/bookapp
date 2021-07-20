@@ -7,6 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 public interface AuthorBookRepository extends JpaRepository<AuthorBook, Long>, JpaSpecificationExecutor<AuthorBook> {
 
@@ -27,5 +28,5 @@ public interface AuthorBookRepository extends JpaRepository<AuthorBook, Long>, J
                     "   coalesce(a.first_name, '') || ' ' || coalesce(a.last_name, ''), " +
                     "   a.createdAt "
             , nativeQuery = true)
-    Page<AuthorBook> getAllAuthorsWithPublishedBooks(AuthorBookFilter filter, Pageable pageable);
+    Page<AuthorBook> getAllAuthorsWithPublishedBooks(@Param("filter") AuthorBookFilter filter, Pageable pageable);
 }

@@ -23,45 +23,4 @@ public class AutomaticEmailProperties implements Serializable {
 
     private String bookTitle;
 
-    public String getNote() {
-        return note;
-    }
-
-    public void setNote(String note) {
-        this.note = note;
-    }
-
-    public String getEmailAddress() {
-        return emailAddress;
-    }
-
-    public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
-    }
-
-    public String getBookIsbn() {
-        return bookIsbn;
-    }
-
-    public void setBookIsbn(String bookIsbn) {
-        this.bookIsbn = bookIsbn;
-    }
-
-    public String getBookTitle() {
-        return bookTitle;
-    }
-
-    public void setBookTitle(String bookTitle) {
-        this.bookTitle = bookTitle;
-    }
-
-    @Override
-    public String toString() {
-        return "AutomaticEmailProperties{" +
-                "note='" + note + '\'' +
-                ", emailAddress='" + emailAddress + '\'' +
-                ", bookIsbn='" + bookIsbn + '\'' +
-                ", bookTitle='" + bookTitle + '\'' +
-                '}';
-    }
 }

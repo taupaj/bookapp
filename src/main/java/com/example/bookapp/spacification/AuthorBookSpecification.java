@@ -1,8 +1,11 @@
 package com.example.bookapp.spacification;
 
 import com.example.bookapp.domain.AuthorBook;
+import com.example.bookapp.domain.AuthorBook_;
 import com.example.bookapp.domain.Book;
+import com.example.bookapp.domain.Book_;
 import com.example.bookapp.domain.User;
+import com.example.bookapp.domain.User_;
 import com.example.bookapp.filter.AuthorBookFilter;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.data.jpa.domain.Specification;
@@ -32,12 +35,8 @@ public class AuthorBookSpecification implements Specification<AuthorBook> {
         String likeFormat = "%%%s%%";
         List<Predicate> predicates = new ArrayList<>();
 
-       /* Join<AuthorBook, User> authorBookUserJoin = root.join(AuthorBook_.authorId, JoinType.INNER);
-        Join<AuthorBook, Book> authorBookBookJoin = root.join(AuthorBook_.bookId, JoinType.INNER);
-
-        if (CollectionUtils.isNotEmpty(filter.getIds())) {
-            predicates.add(root.get(AuthorBook_.id).in(filter.getIds()));
-        }
+        Join<AuthorBook, User> authorBookUserJoin = root.join(AuthorBook_.author, JoinType.INNER);
+        Join<AuthorBook, Book> authorBookBookJoin = root.join(AuthorBook_.book, JoinType.INNER);
 
         if (filter.getId() != null) {
             predicates.add(criteriaBuilder.equal(root.get(AuthorBook_.id), filter.getId()));
@@ -53,11 +52,6 @@ public class AuthorBookSpecification implements Specification<AuthorBook> {
                     authorBookBookJoin.get(Book_.id), filter.getBookId()));
         }
 
-        if (filter.getBookGenre() != null) {
-            predicates.add(criteriaBuilder.like(
-                    authorBookBookJoin.get(Book_.genre), filter.getBookGenre()));
-        }
-
         if (filter.getBookIsbn() != null) {
             predicates.add(criteriaBuilder.like(
                     authorBookBookJoin.get(Book_.isbn), filter.getBookIsbn()));
@@ -68,9 +62,9 @@ public class AuthorBookSpecification implements Specification<AuthorBook> {
                     authorBookBookJoin.get(Book_.title), filter.getBookTitle()));
         }
 
-        if (filter.getBookStatusEnum() != null) {
+        if (filter.getBookStatus() != null) {
             predicates.add(criteriaBuilder.equal(
-                    authorBookBookJoin.get(Book_.bookStatusEnum), filter.getBookStatusEnum()));
+                    authorBookBookJoin.get(Book_.bookStatus), filter.getBookStatus()));
         }
 
         if (filter.getBookPublishedFrom() != null) {
@@ -85,12 +79,12 @@ public class AuthorBookSpecification implements Specification<AuthorBook> {
 
         if (filter.getAuthorFirstName() != null) {
             predicates.add(criteriaBuilder.like(
-                    authorBookUserJoin.get(User_.firstname), filter.getAuthorFirstName()));
+                    authorBookUserJoin.get(User_.firstName), filter.getAuthorFirstName()));
         }
 
         if (filter.getAuthorLastName() != null) {
             predicates.add(criteriaBuilder.like(
-                    authorBookUserJoin.get(User_.lastname), filter.getAuthorLastName()));
+                    authorBookUserJoin.get(User_.lastName), filter.getAuthorLastName()));
         }
 
         if (filter.getAuthorCreatedFrom() != null) {
@@ -108,21 +102,21 @@ public class AuthorBookSpecification implements Specification<AuthorBook> {
 
         if (CollectionUtils.isNotEmpty(orderList)) {
             criteriaQuery.orderBy(orderList);
-        }*/
+        }
 
         Predicate[] predicateArray = predicates.toArray(new Predicate[0]);
 
         return criteriaBuilder.and(predicateArray);
     }
 
-    /*private List<Order> getOrderBy(
+    private List<Order> getOrderBy(
             Join<AuthorBook, User> authorBookUserJoin,
             Join<AuthorBook, Book> authorBookBookJoin,
             CriteriaBuilder criteriaBuilder)
     {
         List<Order> orderList = new ArrayList<>();
 
-        Expression<LocalDateTime> publishedAt = authorBookBookJoin.get(Book_.publeshedAt);
+        Expression<LocalDateTime> publishedAt = authorBookBookJoin.get(Book_.publishedAt);
         Expression<LocalDateTime> createdAt = authorBookUserJoin.get(User_.createdAt);
 
         Order byPublishedAt = criteriaBuilder.desc(publishedAt);
@@ -131,5 +125,5 @@ public class AuthorBookSpecification implements Specification<AuthorBook> {
         orderList.add(byPublishedAt);
         orderList.add(byCreatedAt);
         return orderList;
-    }*/
+    }
 }

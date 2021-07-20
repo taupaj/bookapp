@@ -1,14 +1,10 @@
 package com.example.bookapp.spacification;
 
-import com.example.bookapp.domain.Book;
+import com.example.bookapp.domain.*;
 import com.example.bookapp.filter.BookFilter;
-import org.apache.commons.collections.CollectionUtils;
 import org.springframework.data.jpa.domain.Specification;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
+import javax.persistence.criteria.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +28,9 @@ public class BookSpecification implements Specification<Book> {
         String likeFormat = "%%%s%%";
         List<Predicate> predicates = new ArrayList<>();
 
-        /*if (filter.getId() != null) {
+        Join<Book, BookStatus> bookBookStatusJoin = root.join(Book_.bookStatus, JoinType.INNER);
+
+        if (filter.getId() != null) {
             predicates.add(criteriaBuilder.equal(root.get(Book_.id), filter.getId()));
         }
 
@@ -41,15 +39,15 @@ public class BookSpecification implements Specification<Book> {
                     String.format(likeFormat, filter.getTitle())));
         }
 
-        if (filter.getGenre() != null) {
-            predicates.add(criteriaBuilder.like(root.get(Book_.genre),
-                    String.format(likeFormat, filter.getGenre())));
+        if (filter.getBookStatus() != null) {
+            predicates.add(criteriaBuilder.equal(
+                    bookBookStatusJoin.get(BookStatus_.id), filter.getBookStatus()));
         }
 
         if (filter.getIsbn() != null) {
             predicates.add(criteriaBuilder.like(root.get(Book_.isbn),
                     String.format(likeFormat, filter.getIsbn())));
-        }*/
+        }
 
         Predicate[] predicateArray = predicates.toArray(new Predicate[0]);
 

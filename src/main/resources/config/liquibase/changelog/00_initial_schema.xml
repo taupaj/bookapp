@@ -90,7 +90,7 @@
             </column>
         </createTable>
 
-        <addPrimaryKey columnNames="role_id, group_id" tableName="administration_role_group"/>
+        <addPrimaryKey columnNames="id, role_id, group_id" tableName="administration_role_group"/>
 
         <addForeignKeyConstraint baseColumnNames="role_id"
                                  baseTableName="administration_role_group"
@@ -161,7 +161,7 @@
             </column>
         </createTable>
 
-        <addPrimaryKey columnNames="group_id, action_id" tableName="administration_group_action"/>
+        <addPrimaryKey columnNames="id, group_id, action_id" tableName="administration_group_action"/>
 
         <addForeignKeyConstraint baseColumnNames="group_id"
                                  baseTableName="administration_group_action"

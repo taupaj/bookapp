@@ -60,6 +60,6 @@ public class AuthorBookService {
 
     private void prepareCriteria(AuthorBookFilter authorBookFilter) {
         authorBookFilter.setBookStatus(bookStatusRepository.findByCode(BookStatuses.PUBLISHED_CODE));
-        authorBookFilter.setAuthor(Boolean.TRUE);
+        authorBookFilter.setIsAuthor(Boolean.TRUE);
     }
 }
